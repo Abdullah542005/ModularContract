@@ -41,13 +41,15 @@ contract ModularWallet is Ownable{
    
 }
 
-
-
 contract PluginX{ 
+     //@notice Test function for modular contract, Transfer ether to an address
+    //@param Address of the receiver
+   //@param Amount of Ether in wei
      function transferETH(address _recipient, uint amount) public {
             (bool success, bytes memory data) = payable(_recipient).call{value:amount}("");
              require(success,"Transfer Failed");
      }
+
 }
 
 
